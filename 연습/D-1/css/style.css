@@ -29,4 +29,76 @@ body {
     grid-template-columns: 200px calc(100vw - 200px);
     grid-template-rows: calc(400px + 200px + 250px);
 }
+header {
+    height: calc(400px + 200px + 250px);
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 50px;
+    padding: 0 20px;
+}
+#contents {
+    position: relative;
+    overflow: hidden;
+}
+footer {
+    height: 100px;
+}
 
+/* 로고 */
+header .logo a img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 메뉴 */
+header nav {
+    position: relative;
+    z-index: 10;
+}
+header nav .main-menu {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+header nav .main-menu li a {
+    color: white;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+header nav .sub-menu { display: none; }
+
+header nav .sub-menu > li {
+    background-color: white;
+}
+header nav .sub-menu > li a {
+    color: var(--main-color);
+}
+header nav .sub-menu > li a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* 스팟 메뉴 */
+header .spot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    column-gap: 20px;
+}
+header .spot a {
+    position: relative;
+    color: var(--back-color);
+}
+header .spot a:not(:first-of-type)::before {
+    position: absolute;
+    left: -10px;
+    content: "";
+    display: inline-block;
+}
